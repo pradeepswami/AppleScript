@@ -1,3 +1,4 @@
 # AppleScript
-Some useful AppleScripts
-1- itune-fiio playlist expoter
+### Some useful AppleScripts
+* ItunesExpoter
+- ItunesPlaylistExporter, Export selected iTunes playlist in separate files
