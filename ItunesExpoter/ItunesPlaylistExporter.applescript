@@ -25,7 +25,11 @@ tell application "iTunes"
 			set partist to artist of ptrack
 			set pduration to round ((duration of ptrack) as integer)
 			set plocation to POSIX path of (get location of ptrack as text)
-			set end of psongs to {_artist:partist, _name:pName, _duration:pduration, _location:plocation}
+			if plocation contains "missing value" then
+				log "Missing location -- " & pName
+			else
+				set end of psongs to {_artist:partist, _name:pName, _duration:pduration, _location:plocation}
+			end if
 		end repeat
 		set end of resultRows to {plistname:selectedName, lst:psongs}
 	end repeat
